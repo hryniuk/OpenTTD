@@ -89,6 +89,7 @@
 #include "network/network_func.h"
 #include "framerate_type.h"
 
+#include <iostream>
 #include <map>
 
 #include "table/strings.h"
@@ -3453,6 +3454,7 @@ static void MarkCatchmentTilesDirty()
  */
 void SetViewportCatchmentStation(const Station *st, bool sel)
 {
+	std::cout << "st == nullptr: " << (st == nullptr) << std::endl;
 	if (_viewport_highlight_station != nullptr) SetWindowDirty(WC_STATION_VIEW, _viewport_highlight_station->index);
 	if (_viewport_highlight_town != nullptr) SetWindowDirty(WC_TOWN_VIEW, _viewport_highlight_town->index);
 	if (sel && _viewport_highlight_station != st) {

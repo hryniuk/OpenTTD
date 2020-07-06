@@ -109,9 +109,12 @@ static void FindStationsAroundSelection()
 			if (st == nullptr) continue;
 			if (adjacent != nullptr && st != adjacent) {
 				/* Multiple nearby, distant join is required. */
-				adjacent = nullptr;
-				break;
+				// TODO(hryniuk): #7982 replace this with a list of stations to highlight.
+				// The station cannot be built in this place, so it's a matter of displaying coverage only.
+				// adjacent = nullptr;
+				// break;
 			}
+			SetViewportCatchmentStation(st, true);
 			adjacent = st;
 		}
 	}
